@@ -7,284 +7,230 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity" android:gravity="center">
     <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" app:srcCompat="@drawable/img1"
-            android:id="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            app:srcCompat="@drawable/img1" android:id="@+id/imageView"
             android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-            android:scaleType="centerInside"
-            android:layout_marginTop="8dp"
+            android:scaleType="centerInside" android:layout_marginTop="8dp"
             tools:ignore="ContentDescription" android:layout_weight="1"/>
-    <LinearLayout
-            android:orientation="vertical"
+    <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:gravity="bottom|center_horizontal" android:id="@+id/linearLayout"
-            android:layout_weight="1">
+            android:layout_height="match_parent" android:layout_weight="1">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="7" app:autoSizeTextType="uniform"
+                android:id="@+id/wordTF" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="serif-monospace"
+                android:textAllCaps="false" android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" android:gravity="bottom"
+                android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="24dp"
+                android:textAlignment="center"/>
+
+
         <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1,6.8"
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:gravity="center"
+                android:id="@+id/linearLayout" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
+                app:layout_constraintBottom_toTopOf="@+id/tableLayout">
             <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/wordTF" android:textSize="24sp" app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="serif-monospace" android:textAlignment="center"
-                    android:textAllCaps="false" android:textStyle="bold"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                android:gravity="center">
-            <TextView
-                    android:text="@string/lets_start"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tipTF" android:textSize="18sp" android:fontFamily="serif-monospace"
-                    tools:layout_editor_absoluteY="491dp" tools:layout_editor_absoluteX="291dp"
-                    android:textAlignment="center" android:layout_weight="1" tools:ignore="NestedWeights"/>
+                    android:layout_height="match_parent" app:autoSizeTextType="uniform"
+                    android:id="@+id/tipTF"
+                    android:fontFamily="serif-monospace"
+                    android:textAllCaps="false" android:textStyle="bold" android:gravity="center"
+                    android:textAlignment="center" android:layout_weight="3" android:text="@string/lets_start"/>
             <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button15" android:layout_weight="0"
-                    android:text="@string/new_game" android:onClick="newGame"/>
+                    android:text="New Game" android:layout_weight="1"
+                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                    android:onClick="newGame" app:autoSizeTextType="uniform" android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
         </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:gravity="center">
+        <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1,1.7" android:id="@+id/tableLayout"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="bottom" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp">
+            <TableRow android:layout_width="match_parent" android:layout_height="match_parent" tools:ignore="UselessParent"
+                      android:layout_weight="1">
+                <Button
+                        android:text="A" android:id="@+id/btnA" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Ą" android:id="@+id/btnĄ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="B" android:id="@+id/btnB" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="C" android:id="@+id/btnC" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Ć" android:id="@+id/btnĆ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="D" android:id="@+id/btnD" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="E" android:id="@+id/btnE" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Ę" android:id="@+id/btnĘ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </TableRow>
+            <TableRow android:layout_width="match_parent" android:layout_height="match_parent" tools:ignore="UselessParent"
+                      android:layout_weight="1">
+                <Button
+                        android:text="F" android:id="@+id/btnF" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="G" android:id="@+id/btnG" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="H" android:id="@+id/btnH" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="I" android:id="@+id/btnI" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="J" android:id="@+id/btnJ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="K" android:id="@+id/btnK" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="L" android:id="@+id/btnL" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Ł" android:id="@+id/btnŁ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </TableRow>
+            <TableRow android:layout_width="match_parent" android:layout_height="match_parent" tools:ignore="UselessParent"
+                      android:layout_weight="1">
+                <Button
+                        android:text="M" android:id="@+id/btnM" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="N" android:id="@+id/btnN" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Ń" android:id="@+id/btnŃ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="O" android:id="@+id/btnO" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Ó" android:id="@+id/btnÓ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="P" android:id="@+id/btnP" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="R" android:id="@+id/btnR" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="S" android:id="@+id/btnS" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </TableRow>
+            <TableRow android:layout_width="match_parent" android:layout_height="match_parent" tools:ignore="UselessParent"
+                      android:layout_weight="1">
+                <Button
+                        android:text="Ś" android:id="@+id/btnŚ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="T" android:id="@+id/btnT" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="U" android:id="@+id/btnU" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="W" android:id="@+id/btnW" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Y" android:id="@+id/btnY" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Z" android:id="@+id/btnZ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Ź" android:id="@+id/btnŹ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button
+                        android:text="Ż" android:id="@+id/btnŻ" android:layout_weight="1"
+                        style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
+                        android:onClick="onAction" app:autoSizeTextType="uniform"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </TableRow>
+        </TableLayout>
 
-            <Button
-                    android:text="A"
-                    android:layout_width="match_parent" android:id="@+id/btnA"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText,NestedWeights"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Ą"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnĄ" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="B"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnB" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="C"
-                    android:layout_width="match_parent" android:id="@+id/btnC"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Ć"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnĆ" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="D"
-                    android:layout_width="match_parent" android:id="@+id/btnD"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="E"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnE" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Ę"
-                    android:layout_width="match_parent" android:id="@+id/btnĘ"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:gravity="center">
-
-            <Button
-                    android:text="F"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnF" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="G"
-                    android:layout_width="match_parent" android:id="@+id/btnG"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText,NestedWeights"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="H"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnH" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="I"
-                    android:layout_width="match_parent" android:id="@+id/btnI"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="J"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnJ" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="K"
-                    android:layout_width="match_parent" android:id="@+id/btnK"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="L"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnL" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Ł"
-                    android:layout_width="match_parent" android:id="@+id/btnŁ"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:gravity="center">
-
-            <Button
-                    android:text="M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnM" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="N"
-                    android:layout_width="match_parent" android:id="@+id/btnN"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText,NestedWeights"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Ń"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnŃ" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="O"
-                    android:layout_width="match_parent" android:id="@+id/btnO"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Ó"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnÓ" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="P"
-                    android:layout_width="match_parent" android:id="@+id/btnP"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="R"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnR" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="S"
-                    android:layout_width="match_parent" android:id="@+id/btnS"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-
-
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:gravity="center">
-
-            <Button
-                    android:text="Ś"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnŚ" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-            android:onClick="onAction"/>
-            <Button
-                    android:text="T"
-                    android:layout_width="match_parent" android:id="@+id/btnT"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText,NestedWeights"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="U"
-                    android:layout_width="match_parent" android:id="@+id/btnU"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="W"
-                    android:layout_width="match_parent" android:id="@+id/btnW"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Y"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnY" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Z"
-                    android:layout_width="match_parent" android:id="@+id/btnZ"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-
-            <Button
-                    android:text="Ź"
-                    android:layout_width="match_parent" android:id="@+id/btnŹ"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-            <Button
-                    android:text="Ż"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/btnŻ" android:layout_weight="1"
-                    style="@style/Widget.AppCompat.Button.Colored" tools:ignore="HardcodedText"
-                    android:onClick="onAction"/>
-
-        </LinearLayout>
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 </LinearLayout>

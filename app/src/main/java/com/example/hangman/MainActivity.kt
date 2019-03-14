@@ -69,8 +69,7 @@ class MainActivity : AppCompatActivity() {
                 7 -> R.drawable.img8
                 8 -> R.drawable.img9
                 9 -> R.drawable.img10
-                10 -> R.drawable.img11
-                11 -> R.drawable.img12
+                10 -> R.drawable.img12
                 else -> R.drawable.img12
             }
         )
@@ -140,7 +139,7 @@ class MainActivity : AppCompatActivity() {
             }
         } else {
             fails++
-            if (fails == 11) {
+            if (fails == 10) {
                 disableBtns()
                 wordTF.text= word.toUpperCase()
                 tipTF.text = getString(R.string.loose)
